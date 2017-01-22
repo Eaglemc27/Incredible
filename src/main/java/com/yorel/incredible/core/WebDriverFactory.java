@@ -10,14 +10,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 public class WebDriverFactory {
 
-    private static WebDriver driver;
+    private static ConcurrentHashMap<Long, WebDriver> driver = new ConcurrentHashMap();
 
     public static WebDriver getDriver() {
-        if(driver == null)
-            driver = createDriver();
-        return driver;
+        long threadId = Thread.currentThread().getId();
+        driver.computeIfAbsent(threadId, k -> createDriver());
+        return driver.get(threadId);
 
     }
 
@@ -42,7 +44,9 @@ public class WebDriverFactory {
     }
 
     public static void closeDrvier() {
-        if(driver != null)
-            driver.quit();
-    }
+        driver.forEach((number, webdriver) -> {
+          if(webdriver != null)
+              webdriver.quit();
+        });
+        }
 }
