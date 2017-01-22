@@ -9,5 +9,6 @@ dependencies {
     compile 'io.github.bonigarcia:webdrivermanager:1.5.1'
     compile 'net.lightbody.bmp:browsermob-com.yorel.incredible.core:2.1.4'
     testCompile 'junit:junit:4.12'
+    testCompile 'com.googlecode.junit-toolbox:junit-toolbox:2.2'
 }
 
