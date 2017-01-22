@@ -7,7 +7,7 @@ repositories {
 dependencies {
     compile 'org.seleniumhq.selenium:selenium-java:3.0.1'
     compile 'io.github.bonigarcia:webdrivermanager:1.5.1'
-    compile 'net.lightbody.bmp:browsermob-core:2.1.4'
+    compile 'net.lightbody.bmp:browsermob-com.yorel.incredible.core:2.1.4'
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-M3'
 }
 

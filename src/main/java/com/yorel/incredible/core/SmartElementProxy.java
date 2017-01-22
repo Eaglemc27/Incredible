@@ -1,4 +1,4 @@
-package core;
+package com.yorel.incredible.core;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -7,15 +7,15 @@ public class SmartElementProxy implements InvocationHandler {
 
     private final ElementFinder finder;
 
-    SmartElementProxy(ElementFinder finder){
+    public SmartElementProxy(ElementFinder finder){
         this.finder = finder;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         long startTime = System.currentTimeMillis();
-        long timeout = 5000;
-        long poolingInterval = 100;
+        long timeout = Config.TIMEOUT;
+        long poolingInterval = Config.POOLING_INTERVAL;
         Throwable lastError;
         do {
             try{

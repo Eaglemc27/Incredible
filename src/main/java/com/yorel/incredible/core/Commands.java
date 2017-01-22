@@ -1,4 +1,4 @@
-package core;
+package com.yorel.incredible.core;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

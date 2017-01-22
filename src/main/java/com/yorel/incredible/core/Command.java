@@ -1,4 +1,4 @@
-package core;
+package com.yorel.incredible.core;
 
 import org.openqa.selenium.WebElement;
 

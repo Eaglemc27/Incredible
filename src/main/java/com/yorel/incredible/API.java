@@ -1,5 +1,6 @@
-package core;
+package com.yorel.incredible;
 
+import com.yorel.incredible.core.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -20,7 +21,11 @@ public class API {
         return s(By.cssSelector(cssSelector));
     }
 
-    public static void open(String url){
-        getWebDriver().get(url);
+    public static void open(String url) {
+        if (url.startsWith("http")) {
+            getWebDriver().get(url);
+        } else {
+            getWebDriver().get(Config.BASE_URL + url);
+        }
     }
 }

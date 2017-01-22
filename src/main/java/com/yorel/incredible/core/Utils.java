@@ -1,4 +1,4 @@
-package core;
+package com.yorel.incredible.core;
 
 class Utils {
     static void sleep(long poolingInterval) {
