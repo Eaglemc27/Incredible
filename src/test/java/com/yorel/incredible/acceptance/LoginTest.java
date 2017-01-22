@@ -2,7 +2,7 @@ package com.yorel.incredible.acceptance;
 
 import com.yorel.incredible.testApp.pages.LoginPage;
 import com.yorel.incredible.testApp.pages.MainPage;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class LoginTest extends BaseTest{
 
