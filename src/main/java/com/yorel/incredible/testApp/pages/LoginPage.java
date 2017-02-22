@@ -1,10 +1,10 @@
 package com.yorel.incredible.testApp.pages;
 
 import com.yorel.incredible.API;
-import org.openqa.selenium.By;
 
 import static com.yorel.incredible.API.s;
 import static com.yorel.incredible.core.Condition.beVisible;
+import static com.yorel.incredible.core.Selectors.byText;
 
 public class LoginPage {
     public static void login(String username, String password) {
@@ -14,7 +14,7 @@ public class LoginPage {
     }
 
     public static void linkToRegistrationShouldAppear(){
-        s(By.xpath("//*[text()='Register as a new user']")).should(beVisible());
+        s(byText("Register as a new user")).should(beVisible());
     }
 
     public static void open() {
